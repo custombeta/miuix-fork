@@ -20,11 +20,11 @@ jobs:
 
       - name: Build AARs
         run: |
-          ./gradlew :miuix-ui:assembleRelease \
-                    :miuix-preference:assembleRelease \
-                    :miuix-icons:assembleRelease \
-                    :miuix-blur:assembleRelease \
-                    :miuix-navigation3-ui:assembleRelease
+          ./gradlew :miuix-ui:bundleReleaseAar \
+                    :miuix-preference:bundleReleaseAar \
+                    :miuix-icons:bundleReleaseAar \
+                    :miuix-blur:bundleReleaseAar \
+                    :miuix-navigation3-ui:bundleReleaseAar
 
       - name: Collect AARs
         run: |
