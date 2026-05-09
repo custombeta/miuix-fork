@@ -17,7 +17,10 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
-
+      
+      - name: List available tasks
+        run: ./gradlew :miuix-ui:tasks | grep -i "aar\|bundle\|assemble\|android"
+        
       - name: Build AARs
         run: |
           ./gradlew :miuix-ui:bundleReleaseAar \
