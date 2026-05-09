@@ -26,6 +26,9 @@ jobs:
                     :miuix-blur:assemble \
                     :miuix-navigation3-ui:assemble
                     
+      - name: Find AARs
+        run: find . -name "*.aar" 2>/dev/null
+      
       - name: Collect AARs
         run: |
           mkdir -p artifacts
