@@ -26,18 +26,15 @@ jobs:
                     :miuix-blur:assemble \
                     :miuix-navigation3-ui:assemble
                     
-      - name: Find AARs
-        run: find . -name "*.aar" 2>/dev/null
-      
       - name: Collect AARs
         run: |
           mkdir -p artifacts
-          cp miuix-ui/build/outputs/aar/*-release.aar artifacts/miuix-ui.aar
-          cp miuix-preference/build/outputs/aar/*-release.aar artifacts/miuix-preference.aar
-          cp miuix-icons/build/outputs/aar/*-release.aar artifacts/miuix-icons.aar
-          cp miuix-blur/build/outputs/aar/*-release.aar artifacts/miuix-blur.aar
-          cp miuix-navigation3-ui/build/outputs/aar/*-release.aar artifacts/miuix-navigation3-ui.aar
-
+          cp miuix-ui/build/outputs/aar/miuix-ui.aar artifacts/miuix-ui.aar
+          cp miuix-preference/build/outputs/aar/miuix-preference.aar artifacts/miuix-preference.aar
+          cp miuix-icons/build/outputs/aar/miuix-icons.aar artifacts/miuix-icons.aar
+          cp miuix-blur/build/outputs/aar/miuix-blur.aar artifacts/miuix-blur.aar
+          cp miuix-navigation3-ui/build/outputs/aar/miuix-navigation3-ui.aar artifacts/miuix-navigation3-ui.aar
+          
       - name: Upload AARs
         uses: actions/upload-artifact@v4
         with:
