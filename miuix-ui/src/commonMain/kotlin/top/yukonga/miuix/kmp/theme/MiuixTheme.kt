@@ -35,8 +35,7 @@ fun MiuixTheme(
         LocalTextStyles provides miuixTextStyles,
         LocalIndication provides miuixIndication,
         LocalContentColor provides miuixColors.onBackground,
-        LocalColorSchemeMode provides controller.colorSchemeMode,
-        LocalOverscrollFactory provides MiuixOverscrollFactory,
+        LocalColorSchemeMode provides controller.colorSchemeMode
     ) {
         content()
     }
@@ -62,8 +61,7 @@ fun MiuixTheme(
     CompositionLocalProvider(
         LocalColors provides miuixColors,
         LocalTextStyles provides miuixTextStyles,
-        LocalIndication provides miuixIndication,
-        LocalOverscrollFactory provides MiuixOverscrollFactory,
+        LocalIndication provides miuixIndication
     ) {
         content()
     }
