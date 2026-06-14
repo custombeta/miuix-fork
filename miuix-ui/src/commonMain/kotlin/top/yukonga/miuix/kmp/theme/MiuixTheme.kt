@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.remember
-import top.yukonga.miuix.kmp.utils.MiuixIndicatior
+import top.yukonga.miuix.kmp.utils.MiuixIndication
 
 /**
  * The Miuix theme that provides color and text styles for the Miuix components.
