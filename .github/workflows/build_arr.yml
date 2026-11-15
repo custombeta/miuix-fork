@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -20,28 +21,53 @@ jobs:
 
       - name: Build AARs
         run: |
-          ./gradlew :miuix-ui:assemble \
+          ./gradlew :miuix-core:assemble \
+                    :miuix-ui:assemble \
                     :miuix-preference:assemble \
-                    :miuix-icons:assemble \
+                    :miuix-material:assemble \
                     :miuix-blur:assemble \
-                    :miuix-navigation3-ui:assemble \
-                    :miuix-shader:assemble \
-                    :miuix-squircle:assemble
+                    :miuix-glass:assemble \
+                    :miuix-glass-icons:assemble \
+                    :miuix-squircle:assemble \
+                    :miuix-icons:assemble \
+                    :miuix-nav:assemble
 
       - name: Collect AARs
         run: |
           mkdir -p artifacts
-          cp miuix-ui/build/outputs/aar/miuix-ui.aar artifacts/miuix-ui.aar
-          cp miuix-preference/build/outputs/aar/miuix-preference.aar artifacts/miuix-preference.aar
-          cp miuix-icons/build/outputs/aar/miuix-icons.aar artifacts/miuix-icons.aar
-          cp miuix-blur/build/outputs/aar/miuix-blur.aar artifacts/miuix-blur.aar
-          cp miuix-navigation3-ui/build/outputs/aar/miuix-navigation3-ui.aar artifacts/miuix-navigation3-ui.aar
-          cp miuix-shader/build/outputs/aar/miuix-shader.aar artifacts/miuix-shader.aar
-          cp miuix-squircle/build/outputs/aar/miuix-squircle.aar artifacts/miuix-squircle.aar
+
+          cp miuix-core/build/outputs/aar/miuix-core.aar \
+             artifacts/miuix-core.aar
+
+          cp miuix-ui/build/outputs/aar/miuix-ui.aar \
+             artifacts/miuix-ui.aar
+
+          cp miuix-preference/build/outputs/aar/miuix-preference.aar \
+             artifacts/miuix-preference.aar
+
+          cp miuix-material/build/outputs/aar/miuix-material.aar \
+             artifacts/miuix-material.aar
+
+          cp miuix-blur/build/outputs/aar/miuix-blur.aar \
+             artifacts/miuix-blur.aar
+
+          cp miuix-glass/build/outputs/aar/miuix-glass.aar \
+             artifacts/miuix-glass.aar
+
+          cp miuix-glass-icons/build/outputs/aar/miuix-glass-icons.aar \
+             artifacts/miuix-glass-icons.aar
+
+          cp miuix-squircle/build/outputs/aar/miuix-squircle.aar \
+             artifacts/miuix-squircle.aar
+
+          cp miuix-icons/build/outputs/aar/miuix-icons.aar \
+             artifacts/miuix-icons.aar
+
+          cp miuix-nav/build/outputs/aar/miuix-nav.aar \
+             artifacts/miuix-nav.aar
 
       - name: Upload AARs
         uses: actions/upload-artifact@v4
         with:
           name: miuix-aars
           path: artifacts/
-          
